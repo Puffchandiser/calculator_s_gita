@@ -51,7 +51,7 @@ class Calculadora(object):
             self.theme = self._get_theme(self.settings['current_theme'])
 
         # Edição da Top-Level
-        self.master.title('Calculadora Tk')
+        self.master.title('Калькулятор')
         self.master.maxsize(width=335, height=415)
         self.master.minsize(width=335, height=415)
         self.master.geometry('-150+100')
@@ -114,11 +114,11 @@ class Calculadora(object):
             else:
                 theme.add_command(label=name, command=partial(self._change_theme_to, name))
         #Configuração
-        calc_menu.add_cascade(label='Configuração', menu=config)
-        config.add_cascade(label='Tema', menu=theme)
+        calc_menu.add_cascade(label='Стили', menu=config)
+        config.add_cascade(label='Тема', menu=theme)
 
         config.add_separator()
-        config.add_command(label='Sair', command=self._exit)
+        config.add_command(label='Выход', command=self._exit)
 
     def _change_theme_to(self, name='Dark'):
         self.settings['current_theme'] = name
